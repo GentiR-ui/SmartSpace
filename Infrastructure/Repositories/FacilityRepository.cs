@@ -14,9 +14,9 @@ public class FacilityRepository : IFacilityRepository
         _context = context;
     }
 
-    public async Task<Facility?> GetByIdAsync(Guid id)
+    public async Task<Facility?> GetByIdAsync(int id)
     {
-        return await _context.Facilities.FirstOrDefaultAsync(f => f.Id == (int)id);
+        return await _context.Facilities.FirstOrDefaultAsync(f => f.Id == id);
     }
 
     public async Task<IEnumerable<Facility>> GetAllAsync()
@@ -36,7 +36,7 @@ public class FacilityRepository : IFacilityRepository
         await _context.SaveChangesAsync();
     }
 
-    public async Task DeleteAsync(Guid id)
+    public async Task DeleteAsync(int id)
     {
         var facility = await GetByIdAsync(id);
         if (facility != null)

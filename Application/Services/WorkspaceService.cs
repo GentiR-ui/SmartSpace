@@ -12,29 +12,29 @@ public class WorkspaceService : IWorkspaceService
         _repository = repository;
     }
 
-    public async Task<WorkSpace?> GetByIdAsync(Guid id)
+    public async Task<Workspace?> GetByIdAsync(int id)
     {
         return await _repository.GetByIdAsync(id);
     }
 
-    public async Task<IEnumerable<WorkSpace>> GetAllAsync()
+    public async Task<IEnumerable<Workspace>> GetAllAsync()
     {
         return await _repository.GetAllAsync();
     }
 
-    public async Task<WorkSpace> CreateAsync(WorkSpace workspace)
+    public async Task<Workspace> CreateAsync(Workspace workspace)
     {
         await _repository.AddAsync(workspace);
         return workspace;
     }
 
-    public async Task<WorkSpace> UpdateAsync(WorkSpace workspace)
+    public async Task<Workspace> UpdateAsync(Workspace workspace)
     {
         await _repository.UpdateAsync(workspace);
         return workspace;
     }
 
-    public async Task DeleteAsync(Guid id)
+    public async Task DeleteAsync(int id)
     {
         await _repository.DeleteAsync(id);
     }

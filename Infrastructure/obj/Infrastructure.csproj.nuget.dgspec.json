@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\genti\\OneDrive\\Desktop\\projektTeGreta\\SmartSpace\\Infrastructure\\Infrastructure.csproj": {}
+    "C:\\Users\\Elvis\\OneDrive\\Desktop\\New folder (3)\\SmartSpace\\Infrastructure\\Infrastructure.csproj": {}
   },
   "projects": {
-    "C:\\Users\\genti\\OneDrive\\Desktop\\projektTeGreta\\SmartSpace\\Domain\\Domain.csproj": {
+    "C:\\Users\\Elvis\\OneDrive\\Desktop\\New folder (3)\\SmartSpace\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\genti\\OneDrive\\Desktop\\projektTeGreta\\SmartSpace\\Domain\\Domain.csproj",
+        "projectUniqueName": "C:\\Users\\Elvis\\OneDrive\\Desktop\\New folder (3)\\SmartSpace\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "C:\\Users\\genti\\OneDrive\\Desktop\\projektTeGreta\\SmartSpace\\Domain\\Domain.csproj",
-        "packagesPath": "C:\\Users\\genti\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\genti\\OneDrive\\Desktop\\projektTeGreta\\SmartSpace\\Domain\\obj\\",
+        "projectPath": "C:\\Users\\Elvis\\OneDrive\\Desktop\\New folder (3)\\SmartSpace\\Domain\\Domain.csproj",
+        "packagesPath": "C:\\Users\\Elvis\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Elvis\\OneDrive\\Desktop\\New folder (3)\\SmartSpace\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\genti\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Elvis\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -44,7 +44,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.200"
+        "SdkAnalysisLevel": "9.0.300"
       },
       "frameworks": {
         "net9.0": {
@@ -65,24 +65,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.308/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\genti\\OneDrive\\Desktop\\projektTeGreta\\SmartSpace\\Infrastructure\\Infrastructure.csproj": {
+    "C:\\Users\\Elvis\\OneDrive\\Desktop\\New folder (3)\\SmartSpace\\Infrastructure\\Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\genti\\OneDrive\\Desktop\\projektTeGreta\\SmartSpace\\Infrastructure\\Infrastructure.csproj",
+        "projectUniqueName": "C:\\Users\\Elvis\\OneDrive\\Desktop\\New folder (3)\\SmartSpace\\Infrastructure\\Infrastructure.csproj",
         "projectName": "Infrastructure",
-        "projectPath": "C:\\Users\\genti\\OneDrive\\Desktop\\projektTeGreta\\SmartSpace\\Infrastructure\\Infrastructure.csproj",
-        "packagesPath": "C:\\Users\\genti\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\genti\\OneDrive\\Desktop\\projektTeGreta\\SmartSpace\\Infrastructure\\obj\\",
+        "projectPath": "C:\\Users\\Elvis\\OneDrive\\Desktop\\New folder (3)\\SmartSpace\\Infrastructure\\Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\Elvis\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Elvis\\OneDrive\\Desktop\\New folder (3)\\SmartSpace\\Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\genti\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Elvis\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -97,8 +97,8 @@
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "C:\\Users\\genti\\OneDrive\\Desktop\\projektTeGreta\\SmartSpace\\Domain\\Domain.csproj": {
-                "projectPath": "C:\\Users\\genti\\OneDrive\\Desktop\\projektTeGreta\\SmartSpace\\Domain\\Domain.csproj"
+              "C:\\Users\\Elvis\\OneDrive\\Desktop\\New folder (3)\\SmartSpace\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\Users\\Elvis\\OneDrive\\Desktop\\New folder (3)\\SmartSpace\\Domain\\Domain.csproj"
               }
             }
           }
@@ -113,11 +113,27 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.200"
+        "SdkAnalysisLevel": "9.0.300"
       },
       "frameworks": {
         "net9.0": {
           "targetAlias": "net9.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.15, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.15, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[8.0.15, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -134,7 +150,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.308/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

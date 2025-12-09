@@ -14,9 +14,9 @@ public class CustomerRepository : ICustomerRepository
         _context = context;
     }
 
-    public async Task<Customer?> GetByIdAsync(Guid id)
+    public async Task<Customer?> GetByIdAsync(int id)
     {
-        return await _context.Customers.FirstOrDefaultAsync(c => c.Id == (int)id);
+        return await _context.Customers.FirstOrDefaultAsync(c => c.Id == id);
     }
 
     public async Task<IEnumerable<Customer>> GetAllAsync()
@@ -36,7 +36,7 @@ public class CustomerRepository : ICustomerRepository
         await _context.SaveChangesAsync();
     }
 
-    public async Task DeleteAsync(Guid id)
+    public async Task DeleteAsync(int id)
     {
         var customer = await GetByIdAsync(id);
         if (customer != null)

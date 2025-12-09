@@ -14,9 +14,9 @@ public class AdminRepository : IAdminRepository
         _context = context;
     }
 
-    public async Task<Admin?> GetByIdAsync(Guid id)
+    public async Task<Admin?> GetByIdAsync(int id)
     {
-        return await _context.Admins.FirstOrDefaultAsync(a => a.Id == (int)id);
+        return await _context.Admins.FirstOrDefaultAsync(a => a.Id == id);
     }
 
     public async Task<IEnumerable<Admin>> GetAllAsync()
@@ -36,7 +36,7 @@ public class AdminRepository : IAdminRepository
         await _context.SaveChangesAsync();
     }
 
-    public async Task DeleteAsync(Guid id)
+    public async Task DeleteAsync(int id)
     {
         var admin = await GetByIdAsync(id);
         if (admin != null)

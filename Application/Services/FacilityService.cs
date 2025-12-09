@@ -12,7 +12,7 @@ public class FacilityService : IFacilityService
         _repository = repository;
     }
 
-    public async Task<Facility?> GetByIdAsync(Guid id)
+    public async Task<Facility?> GetByIdAsync(int id)
     {
         return await _repository.GetByIdAsync(id);
     }
@@ -34,7 +34,7 @@ public class FacilityService : IFacilityService
         return facility;
     }
 
-    public async Task DeleteAsync(Guid id)
+    public async Task DeleteAsync(int id)
     {
         await _repository.DeleteAsync(id);
     }

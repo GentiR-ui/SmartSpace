@@ -12,7 +12,7 @@ public class ReservationService : IReservationService
         _repository = repository;
     }
 
-    public async Task<Reservation?> GetByIdAsync(Guid id)
+    public async Task<Reservation?> GetByIdAsync(int id)
     {
         return await _repository.GetByIdAsync(id);
     }
@@ -34,7 +34,7 @@ public class ReservationService : IReservationService
         return reservation;
     }
 
-    public async Task DeleteAsync(Guid id)
+    public async Task DeleteAsync(int id)
     {
         await _repository.DeleteAsync(id);
     }

@@ -4,9 +4,9 @@ namespace Domain.Repositories;
 
 public interface ICustomerRepository
 {
-    Task<Customer?> GetByIdAsync(Guid id);
+    Task<Customer?> GetByIdAsync(int id);
     Task<IEnumerable<Customer>> GetAllAsync();
     Task AddAsync(Customer customer);
     Task UpdateAsync(Customer customer);
-    Task DeleteAsync(Guid id);
+    Task DeleteAsync(int id);
 }

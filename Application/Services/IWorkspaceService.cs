@@ -4,9 +4,9 @@ namespace Application.Services;
 
 public interface IWorkspaceService
 {
-    Task<WorkSpace?> GetByIdAsync(Guid id);
-    Task<IEnumerable<WorkSpace>> GetAllAsync();
-    Task<WorkSpace> CreateAsync(WorkSpace workspace);
-    Task<WorkSpace> UpdateAsync(WorkSpace workspace);
-    Task DeleteAsync(Guid id);
+    Task<Workspace?> GetByIdAsync(int id);
+    Task<IEnumerable<Workspace>> GetAllAsync();
+    Task<Workspace> CreateAsync(Workspace workspace);
+    Task<Workspace> UpdateAsync(Workspace workspace);
+    Task DeleteAsync(int id);
 }

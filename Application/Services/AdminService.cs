@@ -12,7 +12,7 @@ public class AdminService : IAdminService
         _repository = repository;
     }
 
-    public async Task<Admin?> GetByIdAsync(Guid id)
+    public async Task<Admin?> GetByIdAsync(int id)
     {
         return await _repository.GetByIdAsync(id);
     }
@@ -34,7 +34,7 @@ public class AdminService : IAdminService
         return admin;
     }
 
-    public async Task DeleteAsync(Guid id)
+    public async Task DeleteAsync(int id)
     {
         await _repository.DeleteAsync(id);
     }

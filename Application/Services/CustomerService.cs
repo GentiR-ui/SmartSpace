@@ -12,7 +12,7 @@ public class CustomerService : ICustomerService
         _repository = repository;
     }
 
-    public async Task<Customer?> GetByIdAsync(Guid id)
+    public async Task<Customer?> GetByIdAsync(int id)
     {
         return await _repository.GetByIdAsync(id);
     }
@@ -34,7 +34,7 @@ public class CustomerService : ICustomerService
         return customer;
     }
 
-    public async Task DeleteAsync(Guid id)
+    public async Task DeleteAsync(int id)
     {
         await _repository.DeleteAsync(id);
     }
