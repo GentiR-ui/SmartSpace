@@ -24,11 +24,57 @@ public class SmartSpaceDbContext : DbContext
     {
         base.OnModelCreating(modelBuilder);
 
-        // Ensure entity keys if missing; many Domain entities have int Id properties.
+       
         modelBuilder.Entity<Workspace>().HasKey(e => e.Id);
         modelBuilder.Entity<Facility>().HasKey(e => e.Id);
         modelBuilder.Entity<Reservation>().HasKey(e => e.Id);
         modelBuilder.Entity<Customer>().HasKey(e => e.Id);
         modelBuilder.Entity<Admin>().HasKey(e => e.Id);
+        modelBuilder.Entity<Location>().HasKey(e => e.Id);
+        modelBuilder.Entity<Person>().HasKey(e => e.Id);
+        modelBuilder.Entity<Payment>().HasKey(e => e.Id);
+        modelBuilder.Entity<Review>().HasKey(e => e.Id);
+        modelBuilder.Entity<WorkspaceType>().HasKey(e => e.Id);
+
+        // Configure relationships
+        modelBuilder.Entity<Workspace>()
+            .HasOne(w => w.Location)
+            .WithMany(l => l.Workspaces)
+            .HasForeignKey(w => w.LocationId);
+
+        modelBuilder.Entity<Workspace>()
+            .HasOne(w => w.WorkspaceType)
+            .WithMany(wt => wt.Workspaces)
+            .HasForeignKey(w => w.WorkspaceTypeId);
+
+        modelBuilder.Entity<Facility>()
+            .HasOne(f => f.Workspace)
+            .WithMany(w => w.Facilities)
+            .HasForeignKey(f => f.WorkspaceId);
+
+        modelBuilder.Entity<Reservation>()
+            .HasOne(r => r.Workspace)
+            .WithMany(w => w.Reservations)
+            .HasForeignKey(r => r.WorkspaceId);
+
+        modelBuilder.Entity<Reservation>()
+            .HasOne(r => r.Customer)
+            .WithMany()
+            .HasForeignKey(r => r.CustomerId);
+
+        modelBuilder.Entity<Payment>()
+            .HasOne(p => p.Reservation)
+            .WithOne(r => r.Payment)
+            .HasForeignKey<Payment>(p => p.ReservationId);
+
+        modelBuilder.Entity<Review>()
+            .HasOne(r => r.Customer)
+            .WithMany()
+            .HasForeignKey(r => r.CustomerId);
+
+        modelBuilder.Entity<Review>()
+            .HasOne(r => r.Workspace)
+            .WithMany(w => w.Reviews)
+            .HasForeignKey(r => r.WorkspaceId);
     }
 }

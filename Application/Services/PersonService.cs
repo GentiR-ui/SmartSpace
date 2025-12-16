@@ -12,7 +12,7 @@ public class PersonService : IPersonService
         _repository = repository;
     }
 
-    public async Task<Person?> GetByIdAsync(Guid id)
+    public async Task<Person?> GetByIdAsync(int id)
     {
         return await _repository.GetByIdAsync(id);
     }
@@ -34,7 +34,7 @@ public class PersonService : IPersonService
         return person;
     }
 
-    public async Task DeleteAsync(Guid id)
+    public async Task DeleteAsync(int id)
     {
         await _repository.DeleteAsync(id);
     }

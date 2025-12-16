@@ -12,7 +12,7 @@ public class PaymentService : IPaymentService
         _repository = repository;
     }
 
-    public async Task<Payment?> GetByIdAsync(Guid id)
+    public async Task<Payment?> GetByIdAsync(int id)
     {
         return await _repository.GetByIdAsync(id);
     }
@@ -34,7 +34,7 @@ public class PaymentService : IPaymentService
         return payment;
     }
 
-    public async Task DeleteAsync(Guid id)
+    public async Task DeleteAsync(int id)
     {
         await _repository.DeleteAsync(id);
     }

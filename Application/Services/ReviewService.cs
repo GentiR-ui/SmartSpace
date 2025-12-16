@@ -12,7 +12,7 @@ public class ReviewService : IReviewService
         _repository = repository;
     }
 
-    public async Task<Review?> GetByIdAsync(Guid id)
+    public async Task<Review?> GetByIdAsync(int id)
     {
         return await _repository.GetByIdAsync(id);
     }
@@ -34,7 +34,7 @@ public class ReviewService : IReviewService
         return review;
     }
 
-    public async Task DeleteAsync(Guid id)
+    public async Task DeleteAsync(int id)
     {
         await _repository.DeleteAsync(id);
     }

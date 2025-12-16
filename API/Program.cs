@@ -15,7 +15,7 @@ var connectionString = configuration.GetConnectionString("DefaultConnection");
 if (!string.IsNullOrEmpty(connectionString))
 {
 	builder.Services.AddDbContext<SmartSpaceDbContext>(options =>
-		options.UseSqlServer(connectionString));
+		options.UseSqlite(connectionString));
 }
 
 // Register application services
@@ -34,8 +34,13 @@ builder.Services.AddScoped<IWorkspaceTypeService, WorkspaceTypeService>();
 builder.Services.AddScoped<IAdminRepository, AdminRepository>();
 builder.Services.AddScoped<ICustomerRepository, CustomerRepository>();
 builder.Services.AddScoped<IFacilityRepository, FacilityRepository>();
-// Note: ReservationRepository exists but is currently empty; registered for future implementation
 builder.Services.AddScoped<IReservationRepository, ReservationRepository>();
+builder.Services.AddScoped<ILocationRepository, LocationRepository>();
+builder.Services.AddScoped<IPersonRepository, PersonRepository>();
+builder.Services.AddScoped<IPaymentRepository, PaymentRepository>();
+builder.Services.AddScoped<IReviewRepository, ReviewRepository>();
+builder.Services.AddScoped<IWorkspaceRepository, WorkspaceRepository>();
+builder.Services.AddScoped<IWorkspaceTypeRepository, WorkspaceTypeRepository>();
 
 var app = builder.Build();
 

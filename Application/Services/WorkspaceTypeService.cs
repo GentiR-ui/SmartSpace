@@ -12,7 +12,7 @@ public class WorkspaceTypeService : IWorkspaceTypeService
         _repository = repository;
     }
 
-    public async Task<WorkspaceType?> GetByIdAsync(Guid id)
+    public async Task<WorkspaceType?> GetByIdAsync(int id)
     {
         return await _repository.GetByIdAsync(id);
     }
@@ -34,7 +34,7 @@ public class WorkspaceTypeService : IWorkspaceTypeService
         return workspaceType;
     }
 
-    public async Task DeleteAsync(Guid id)
+    public async Task DeleteAsync(int id)
     {
         await _repository.DeleteAsync(id);
     }

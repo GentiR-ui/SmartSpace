@@ -4,9 +4,9 @@ namespace Application.Services;
 
 public interface IReviewService
 {
-    Task<Review?> GetByIdAsync(Guid id);
+    Task<Review?> GetByIdAsync(int id);
     Task<IEnumerable<Review>> GetAllAsync();
     Task<Review> CreateAsync(Review review);
     Task<Review> UpdateAsync(Review review);
-    Task DeleteAsync(Guid id);
+    Task DeleteAsync(int id);
 }

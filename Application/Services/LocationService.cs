@@ -12,7 +12,7 @@ public class LocationService : ILocationService
         _repository = repository;
     }
 
-    public async Task<Location?> GetByIdAsync(Guid id)
+    public async Task<Location?> GetByIdAsync(int id)
     {
         return await _repository.GetByIdAsync(id);
     }
@@ -34,7 +34,7 @@ public class LocationService : ILocationService
         return location;
     }
 
-    public async Task DeleteAsync(Guid id)
+    public async Task DeleteAsync(int id)
     {
         await _repository.DeleteAsync(id);
     }

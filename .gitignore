@@ -1,0 +1,28 @@
+﻿## .NET
+bin/
+obj/
+*.user
+*.suo
+*.cache
+*.log
+
+## Database
+*.db
+*.db-shm
+*.db-wal
+
+## Node/Frontend
+node_modules/
+dist/
+.next/
+build/
+*.local
+
+## IDE
+.vs/
+.vscode/
+.idea/
+
+## OS
+.DS_Store
+Thumbs.db
