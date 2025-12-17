@@ -17,18 +17,12 @@ public class WorkspaceRepository : IWorkspaceRepository
     public async Task<Workspace?> GetByIdAsync(int id)
     {
         return await _context.Workspaces
-            .Include(w => w.Location)
-            .Include(w => w.WorkspaceType)
-            .Include(w => w.Facilities)
             .FirstOrDefaultAsync(w => w.Id == id);
     }
 
     public async Task<IEnumerable<Workspace>> GetAllAsync()
     {
-        return await _context.Workspaces
-            .Include(w => w.Location)
-            .Include(w => w.WorkspaceType)
-            .ToListAsync();
+        return await _context.Workspaces.ToListAsync();
     }
 
     public async Task AddAsync(Workspace workspace)

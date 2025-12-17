@@ -9,6 +9,17 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllers();
 
+// Configure CORS
+builder.Services.AddCors(options =>
+{
+	options.AddPolicy("AllowFrontend", policy =>
+	{
+		policy.AllowAnyOrigin()
+			.AllowAnyMethod()
+			.AllowAnyHeader();
+	});
+});
+
 // Configure DbContext
 var configuration = builder.Configuration;
 var connectionString = configuration.GetConnectionString("DefaultConnection");
@@ -45,6 +56,7 @@ builder.Services.AddScoped<IWorkspaceTypeRepository, WorkspaceTypeRepository>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
+app.UseCors("AllowFrontend");
 app.MapControllers();
 
 app.Run();
