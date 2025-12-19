@@ -84,7 +84,7 @@ export default function Customers() {
               <td>{customer.id}</td>
               <td>{customer.name}</td>
               <td>{customer.email}</td>
-              <td>{new Date(customer.created_at).toLocaleDateString()}</td>
+                <td>{new Date(customer.createdAt).toLocaleDateString()}</td>
               <td>
                 <button className="btn btn-danger btn-sm" onClick={() => handleDelete(customer.id)}>
                   Delete

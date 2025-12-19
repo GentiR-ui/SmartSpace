@@ -92,7 +92,7 @@ export default function WorkspaceTypes() {
               <td>{type.id}</td>
               <td>{type.name}</td>
               <td>{type.description}</td>
-              <td>{type.pricePerHour ?? '-'}</td>
+                <td>{type.pricePerHour ? `$${type.pricePerHour}` : 'N/A'}</td>
               <td>
                 <button className="btn btn-danger btn-sm" onClick={() => handleDelete(type.id)}>
                   Delete

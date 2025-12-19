@@ -13,12 +13,12 @@ public class DesignTimeDbContextFactory : IDesignTimeDbContextFactory<SmartSpace
 
         if (string.IsNullOrEmpty(connectionString))
         {
-            // Fallback to a sensible local SQLite connection
-            connectionString = "Data Source=smartspace.db";
+            // Fallback to a sensible local SQL Server connection
+            connectionString = "Server=localhost\\SQLEXPRESS;Database=SmartSpace;Trusted_Connection=True;TrustServerCertificate=True;";
         }
 
         var optionsBuilder = new DbContextOptionsBuilder<SmartSpaceDbContext>();
-        optionsBuilder.UseSqlite(connectionString);
+        optionsBuilder.UseSqlServer(connectionString);
 
         return new SmartSpaceDbContext(optionsBuilder.Options);
     }

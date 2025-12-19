@@ -4,6 +4,7 @@ public class CreatePaymentRequest
 {
     public decimal Amount { get; set; }
     public int ReservationId { get; set; }
+    public string PaymentMethod { get; set; } = string.Empty;
 }
 
 public class UpdatePaymentRequest
@@ -12,6 +13,7 @@ public class UpdatePaymentRequest
     public decimal Amount { get; set; }
     public int ReservationId { get; set; }
     public string Status { get; set; } = "Pending";
+    public string PaymentMethod { get; set; } = string.Empty;
 }
 
 public class PaymentResponse
@@ -21,4 +23,5 @@ public class PaymentResponse
     public DateTime PaymentDate { get; set; }
     public string Status { get; set; } = string.Empty;
     public int ReservationId { get; set; }
+    public string PaymentMethod { get; set; } = string.Empty;
 }

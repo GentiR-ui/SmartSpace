@@ -26,7 +26,7 @@ var connectionString = configuration.GetConnectionString("DefaultConnection");
 if (!string.IsNullOrEmpty(connectionString))
 {
 	builder.Services.AddDbContext<SmartSpaceDbContext>(options =>
-		options.UseSqlite(connectionString));
+		options.UseSqlServer(connectionString));
 }
 
 // Register application services

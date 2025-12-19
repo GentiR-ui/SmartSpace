@@ -119,31 +119,34 @@ export default function Payments() {
           </tr>
         </thead>
         <tbody>
-          {payments.map((payment: any) => (
-            <tr key={payment.id}>
-              <td>{payment.id}</td>
-              <td>{payment.reservationId ?? 'N/A'}</td>
-              <td>${payment.amount}</td>
-              <td>{payment.paymentMethod || '-'}</td>
-              <td>
-                <select
-                  value={payment.status || 'Pending'}
-                  onChange={(e) => handleStatusChange(payment.id, e.target.value)}
-                  className="status-select"
-                >
-                  <option value="Pending">Pending</option>
-                  <option value="Completed">Completed</option>
-                  <option value="Failed">Failed</option>
-                </select>
-              </td>
-              <td>{payment.paymentDate ? new Date(payment.paymentDate).toLocaleDateString() : 'N/A'}</td>
-              <td>
-                <button className="btn btn-danger btn-sm" onClick={() => handleDelete(payment.id)}>
-                  Delete
-                </button>
-              </td>
-            </tr>
-          ))}
+          {payments.map((payment: any) => {
+            const reservation = reservations.find((res: any) => res.id === payment.reservationId)
+            return (
+              <tr key={payment.id}>
+                <td>{payment.id}</td>
+                <td>{reservation?.name || reservation?.workspace?.name || payment.reservationId || 'N/A'}</td>
+                <td>${payment.amount}</td>
+                <td>{payment.paymentMethod || 'N/A'}</td>
+                <td>
+                  <select
+                    value={payment.status || 'Pending'}
+                    onChange={(e) => handleStatusChange(payment.id, e.target.value)}
+                    className="status-select"
+                  >
+                    <option value="Pending">Pending</option>
+                    <option value="Completed">Completed</option>
+                    <option value="Failed">Failed</option>
+                  </select>
+                </td>
+                <td>{payment.paymentDate ? new Date(payment.paymentDate).toLocaleDateString() : 'N/A'}</td>
+                <td>
+                  <button className="btn btn-danger btn-sm" onClick={() => handleDelete(payment.id)}>
+                    Delete
+                  </button>
+                </td>
+              </tr>
+            )
+          })}
         </tbody>
       </table>
     </div>
