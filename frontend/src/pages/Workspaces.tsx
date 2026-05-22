@@ -110,7 +110,7 @@ export default function Workspaces() {
               <td>{workspace.description || 'N/A'}</td>
               <td>{locations.find((l: any) => l.id === workspace.locationId)?.city || locations.find((l: any) => l.id === workspace.locationId)?.address || `Location ${workspace.locationId}`}</td>
               <td>{types.find((t: any) => t.id === workspace.workspaceTypeId)?.name || `Type ${workspace.workspaceTypeId}`}</td>
-              <td>{workspace.is_active ? 'Yes' : 'No'}</td>
+              <td>{workspace.isActive ? 'Yes' : 'No'}</td>
               <td>
                 <button className="btn btn-danger btn-sm" onClick={() => handleDelete(workspace.id)}>
                   Delete
